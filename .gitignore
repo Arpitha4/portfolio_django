@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+
+# JetBrains IDE project files
+.idea/
+db.sqlite3
+portfolio/migrations

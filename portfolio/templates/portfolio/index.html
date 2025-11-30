@@ -1,0 +1,22 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+{% block title %}Home - My Portfolio{% endblock %}
+{% block content %}
+<section class="hero">
+    <div class="container hero-inner">
+        <div>
+            <h1>Hi, I'm Arpitha N G</h1>
+            <p>Developer passionate about learning new technologies and building efficient and scalable systems using
+                Python and modern web tools.</p>
+            <a class="btn" href="{% url 'portfolio:projects' %}">My projects</a>
+        </div>
+        <div class="hero-image">
+            <img
+                    src="{% static 'images/profile.jpg' %}"
+                    alt="Arpitha Profile Photo"
+                    class="profile-photo"
+            >
+        </div>
+    </div>
+</section>
+{% endblock %}

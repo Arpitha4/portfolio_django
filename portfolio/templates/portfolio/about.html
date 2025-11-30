@@ -1,0 +1,84 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+{% block title %}About me - My Portfolio{% endblock %}
+{% block extra_head %}
+<link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css"/>
+<link rel="stylesheet" href="{% static 'css/projects_slider.css' %}">
+{% endblock %}
+{% block content %}
+<div class="about-container">
+    <h1 class="about-title">About me</h1>
+    <div class="about-details">
+        <p class="about-line">
+            <strong>Backend Developer</strong> | Python | APIs | Flask | FastAPI | SQL | NoSQL | Azure | Data
+            Visualization
+        </p>
+        <p class="about-line">
+            Backend developer with <strong>2+ years of experience</strong> building and maintaining Python-based backend
+            services
+            and REST APIs across Linux and Windows environments. I Specialise in <strong>Flask and FastAPI</strong>,
+            developing scalable,
+            secure, and clean backend architectures that support business-critical applications.
+        </p>
+        <p class="about-line">
+            I have strong hands-on experience working with <strong>SQL and NoSQL databases</strong>, including query
+            optimisation,
+            database performance tuning, schema improvements, and bug fixing related to backend data flows.
+            Also includes deploying and managing applications on <strong>Azure</strong> and using
+            <strong>Docker</strong>.
+        </p>
+        <p class="about-line">
+            In addition to my core backend experience, I have built several personal projects using
+            <strong>Django</strong>.
+            These projects strengthened my understanding of Django’s structure and best practices,
+            even though it’s not part of my professional experience.
+        </p>
+        <p class="about-line">
+            I am a proactive learner with a strong interest in writing maintainable code, solving complex technical
+            problems,
+            and contributing to high-quality backend systems.
+        </p>
+    </div>
+    <div class="about-grid">
+        <article class="card" tabindex="0">
+            <h2>Education</h2>
+            <p>B.E. in Computer Science</p>
+            <ul>
+                <li>Global Academy Of Technology, Bangalore (2018 - 2022).</li>
+            </ul>
+            <p>Department of Pre-University Education</p>
+            <ul>
+                <li>Jnana Bharathi PU College, Kunigal (2016 - 2018).</li>
+            </ul>
+            <p>Karnataka Secondary Education Examination Board</p>
+            <ul>
+                <li>Jnana Bharathi High School, Kunigal (2015 - 2016).</li>
+            </ul>
+        </article>
+        <article class="card" tabindex="0">
+            <h2>Skills</h2>
+            <p>Tech stack & tools</p>
+            <ul>
+                <li>Programming Language : Python.</li>
+                <li>Frameworks : Fast API, Flask API, Django.</li>
+                <li>Database knowledge : MySQL, PostgreSQL, Cassandra, Kairos DB.</li>
+                <li>Version Control & Collaboration : Git, GitHub, GitLab.</li>
+                <li>Operating System : Windows, Linux.</li>
+                <li>Services : Azure DevOps, Azure Virtual Machines.</li>
+                <li>Business analytics tool : Basics of Power BI Data Visualization.</li>
+            </ul>
+        </article>
+        <article class="card" tabindex="0">
+            <h2>Experience</h2>
+            <p>Software Engineer</p>
+            <ul>
+                <li>Knowledge Lens: A Rockwell Automation Company (Aug 2022 - Oct 2024).</li>
+            </ul>
+            <p>Intern</p>
+            <ul>
+                <li>Knowledge Lens (Mar 2022 - Jun 2022).</li>
+            </ul>
+        </article>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+{% block title %}My Projects - My Portfolio{% endblock %}
+{% block extra_head %}
+<link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css"/>
+<link rel="stylesheet" href="{% static 'css/projects_slider.css' %}">
+{% endblock %}
+{% block content %}
+<div class="projects-section">
+    <div class="container">
+        <h1>
+            <center>My Projects</center>
+        </h1>
+        <div class="swiper my-projects-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="width:320px;">
+                    <div class="project-card">
+                        <div>
+                            <h3>IMPLEMENTATION OF ELECTRICITY BILLING SYSTEM IN C</h3>
+                            <span class="project-date">Oct 2019 – Jan 2020</span>
+                            <p>The main objective to do reduce the cost of collection procedure. It is about the
+                                implementation of Electricity Billing system using basic C programming language.</p>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Arpitha4/Electricity_Bill" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide" style="width:320px;">
+                    <div class="project-card">
+                        <div>
+                            <h3>Yesplus club website</h3>
+                            <span class="project-date">May 2020 – Oct 2020</span>
+                            <p>A real-time web application built with React for delivering interactive and seamless user
+                                experience.</p>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Arpitha4/Yes_Plus_webapp" target="_blank">GitHub</a>
+                            <a href="https://bityesplus.web.app/" target="_blank">Live</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide" style="width:320px;">
+                    <div class="project-card">
+                        <div>
+                            <h3>Smart Todo</h3>
+                            <span class="project-date">Jun 2025 – Jul 2025</span>
+                            <p>Smart Todo is an intelligent AI-powered task management platform that automatically
+                                creates and prioritizes tasks using contextual data such as messages, notes, or emails,
+                                built using Django.</p>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Arpitha4/django_food_delivery" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide" style="width:320px;">
+                    <div class="project-card">
+                        <div>
+                            <h3>Foodie Express</h3>
+                            <span class="project-date">Sep 2025 – Oct 2025</span>
+                            <p>Foodie Express is a Django-based food delivery application that allows customers to
+                                browse food items, place orders, and communicate with delivery Partner. Admins and
+                                delivery users can manage the system efficiently through role-based access.</p>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/yourusername/project3" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block extra_js %}
+<script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
+<script src="{% static 'js/projects_slider.js' %}"></script>
+{% endblock %}
