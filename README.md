@@ -1,4 +1,4 @@
-# Modern Django Portfolio (skeleton)
+# Django Portfolio
 
 This is a ready-to-run Django project skeleton for a modern portfolio site.
 
@@ -9,6 +9,3 @@ Quick start:
 4. Create superuser (optional): `python manage.py createsuperuser`
 5. Run server: `python manage.py runserver`
 
-Notes:
-- DEBUG=True in settings for development.
-- If you plan to use project `ImageField`, install Pillow: `pip install Pillow`.
