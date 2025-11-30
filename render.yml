@@ -1,0 +1,12 @@
+# Exported from Render on 2025-11-15T13:11:56Z
+version: "1"
+services:
+- type: web
+  name: portfolio_django
+  runtime: python
+  repo: https://github.com/Arpitha4/portfolio_django
+  plan: free
+  region: singapore
+  buildCommand: pip install -r requirements.txt
+  startCommand: gunicorn portfolio_django.wsgi
+  autoDeployTrigger: commit
