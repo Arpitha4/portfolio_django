@@ -13,7 +13,10 @@
 <header class="site-header">
     <div class="container nav">
         <a class="brand" href="{% url 'portfolio:index' %}">Arpitha N G</a>
-        <nav>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <i class="fa fa-bars"></i>
+        </button>
+        <nav class="primary-nav">
             <a href="{% url 'portfolio:index' %}">Home</a>
             <a href="{% url 'portfolio:projects' %}">Projects</a>
             <a href="{% url 'portfolio:about' %}">About</a>
@@ -22,6 +25,13 @@
     </div>
 </header>
 {% block content %}{% endblock %}
-{% block extra_js %}{% endblock %}
+  <footer class="site-footer">
+      <p>Copyright &copy; 2025 Arpitha N G. All rights reserved.</p>
+  </footer>
+{% block extra_js %}
+<script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
+<script src="{% static 'portfolio/js/base.js' %}"></script>
+<script src="{% static 'portfolio/js/projects_slider.js' %}"></script>
+{% endblock %}
 </body>
 </html>
