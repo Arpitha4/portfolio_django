@@ -9,6 +9,8 @@
 /* ---------- Reset & Layout ---------- */
 * {
   box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #64748b #0f172a;
 }
 
 html,
@@ -279,17 +281,35 @@ body {
 }
 
 @media (max-width: 768px) {
-  .hero-inner {
+  .hero .container.hero-inner {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 1.25rem;
+    gap: 1rem;
+  }
+
+  .hero .hero-image {
+    order: 1;
+  }
+
+  .hero .container.hero-inner > div:not(.hero-image) {
+    order: 2;
   }
 
   .profile-photo {
-    width: 180px;
-    height: 180px;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    max-width: 80%;
+    margin: 0 auto 3rem;
   }
 
   .social-icon {
