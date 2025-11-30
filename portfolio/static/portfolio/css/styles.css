@@ -153,6 +153,11 @@ body {
   line-height: 1.35;
   color: #d7dee6;
 }
+@media (max-width: 768px) {
+.swiper {
+  padding: 2rem;
+}
+}
 
 /* Links area */
 .project-links {
@@ -471,3 +476,25 @@ img {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.footer-content p {
+  margin: 0;
+}
+
+.footer-content a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.footer-content a:hover {
+  color: #5bb3ff;
+}

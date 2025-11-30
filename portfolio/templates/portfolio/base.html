@@ -25,9 +25,12 @@
     </div>
 </header>
 {% block content %}{% endblock %}
-  <footer class="site-footer">
-      <p>Copyright &copy; 2025 Arpitha N G. All rights reserved.</p>
-  </footer>
+<footer class="site-footer">
+    <div class="footer-content">
+        <p>Copyright &copy; 2025 Arpitha N G. All rights reserved.</p>
+        <p class="contact-link"><a href="{% url 'portfolio:contact' %}">Contact</a></p>
+    </div>
+</footer>
 {% block extra_js %}
 <script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
 <script src="{% static 'portfolio/js/base.js' %}"></script>
