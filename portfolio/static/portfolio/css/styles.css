@@ -37,7 +37,7 @@ body {
   gap: 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   background: linear-gradient(180deg, #020617 0%, #081229 100%);
-  padding: 0.9rem 1rem;
+  padding: 1.4rem 1.5rem;
 }
 
 .site-header a {
@@ -69,7 +69,7 @@ body {
 
 /* ---------- Hero ---------- */
 .hero {
-  padding: 1.8rem 0;
+  padding: 1.8rem 0rem 0rem 1.8rem;
 }
 
 @media (max-width: 768px) {
@@ -96,7 +96,7 @@ body {
   margin: 0 0 1rem;
 }
 
-.btn {
+.btn{
   display: inline-block;
   padding: 0.6rem 1rem;
   border-radius: 9px;
@@ -143,7 +143,7 @@ body {
 .project-card h3 {
   margin: 0 0 0.25rem;
   font-size: 1.15rem;
-  color: blue;
+  color:#4178d1;
   font: bold;
 }
 
@@ -476,7 +476,7 @@ img {
 .site-footer {
   text-align: center;
   font-size: 0.85rem;
-  padding: 1rem 0;
+  padding: 1.8rem 0;
   background: linear-gradient(180deg, #020617 0%, #081229 100%);
   width: 100%;
   margin-top: auto;
@@ -504,4 +504,9 @@ img {
 
 .footer-content a:hover {
   color: #5bb3ff;
+}
+@media (max-width: 768px) {
+  .site-footer {
+    padding:2rem;
+  }
 }
