@@ -101,9 +101,12 @@ body {
   padding: 0.6rem 1rem;
   border-radius: 9px;
   background: linear-gradient(90deg, var(--accent), #5bb3ff);
-  color: black;
+  color: #fff;
   text-decoration: none;
   font-weight: 700;
+}
+.btn:hover {
+  opacity: 0.85;
 }
 
 /* ---------- Projects / Cards ---------- */
@@ -343,9 +346,7 @@ body {
 
 .about-title {
   text-align: center;
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  font-weight: 600;
+  margin: 0 0 1rem 0;
     color: black;
 }
 
@@ -509,4 +510,56 @@ img {
   .site-footer {
     padding:2rem;
   }
+}
+
+/* ---------- Resume ---------- */
+.resume-page {
+  max-width: 850px;
+  margin: auto;
+  padding: 20px;
+}
+
+.resume-title {
+  text-align: center;
+  margin: 0 0 1rem 0;
+  color: black;
+}
+
+.resume-section {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+
+}
+
+.resume-section h2 {
+  border-bottom: 2px solid #007bff;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  color: black;
+  font-size: 1.25rem;
+}
+.resume-section p {
+  color: #333333;
+}
+
+.resume-section li {
+  color: #333333;
+  font-size: 0.9rem;
+}
+.download-btn {
+  padding: 10px 25px;
+  font-size: 16px;
+  border-radius: 9px;
+  background: linear-gradient(90deg, var(--accent), #5bb3ff);
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.download-btn:hover {
+  opacity: 0.85;
 }

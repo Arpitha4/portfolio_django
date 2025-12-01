@@ -1,0 +1,45 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+{% block title %}Arpitha N G - Home{% endblock %}
+{% block content %}
+<div class="resume-page">
+    <h1 class="resume-title">Resume</h1>
+    <section class="resume-section">
+        <p> Software Engineer with over two years of experience in designing and developing efficient software
+            solutions. Skilled in
+            problem-solving, system optimization, and delivering high-quality applications that align with business
+            objectives.
+            Adept at collaborating in team environments, adapting to new technologies, and continuously enhancing
+            technical
+            expertise.</p>
+    </section>
+    <section class="resume-section">
+        <h2>Achievements</h2>
+        <ul>
+            <li>Recognized as<strong>'Flexible Employee'</strong> in April 2024 for outstanding adaptability and
+                responsiveness to changing work
+                demands and project requirements.
+            </li>
+        </ul>
+    </section>
+    <section class="resume-section">
+        <h2>Certifications</h2>
+        <ul>
+            <li>Introduction to HTML5 - (May 2020).</li>
+            <li>Programming for Everybody (Getting Started with Python) - (May 2020).</li>
+            <li>HTML, CSS, and Javascript for Web Developers - (Aug 2020).</li>
+            <li>DIGITAL SKILLS: WEB ANALYTICS - (Oct 2020).</li>
+            <li>Microsoft SQL for Beginners - (Jun 2024)</li>
+            <li>Python Django For Beginners - (Sept 2025).</li>
+        </ul>
+    </section>
+    <section class="resume-section">
+        <a class="download-btn" href="{% static 'resume/resume.pdf' %}" download>
+            Download PDF Resume
+        </a>
+        <a class="download-btn" href="{% static 'resume/resume.pdf' %}" target="_blank">
+            View Resume
+        </a>
+    </section>
+</div>
+{% endblock %}

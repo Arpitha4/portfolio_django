@@ -15,4 +15,8 @@ def about(request):
 
 
 def contact(request):
-    return render(request, 'portfolio/contact.html', )
+    return render(request, 'portfolio/contact.html')
+
+
+def resume(request):
+    return render(request, 'portfolio/resume.html')
