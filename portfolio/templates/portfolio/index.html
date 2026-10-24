@@ -1,22 +1,256 @@
 {% extends 'portfolio/base.html' %}
 {% load static %}
-{% block title %}Arpitha N G - Home{% endblock %}
+{% block title %}Arpitha N G - Portfolio{% endblock %}
+
 {% block content %}
-<section class="hero">
+
+<!-- ============ HOME ============ -->
+<section class="section hero" id="home">
     <div class="container hero-inner">
-        <div>
-            <h1>Hi, I'm Arpitha N G.</h1>
-            <p>A developer passionate about learning new technologies and building efficient, scalable systems using
-                Python and modern web tools.</p>
-            <a class="btn" href="{% url 'portfolio:projects' %}">My projects</a>
+        <div class="hero-text reveal">
+            <span class="eyebrow"><i class="fa-solid fa-circle"></i> Open to opportunities</span>
+            <h1>Hi, I'm <span class="grad-text">Arpitha N G</span></h1>
+            <p class="typed-line">I build <span id="typed" aria-live="polite"></span><span class="cursor">|</span></p>
+            <p class="hero-desc">A developer passionate about learning new technologies and building efficient,
+                scalable systems using Python and modern web tools.</p>
+            <div class="hero-actions">
+                <a class="btn" href="#projects">My projects <i class="fa-solid fa-arrow-right"></i></a>
+                <a class="btn btn-ghost" href="#contact">Get in touch</a>
+            </div>
+<!--            <ul class="hero-stats">-->
+<!--                <li><strong>2+</strong><span>Years experience</span></li>-->
+<!--                <li><strong>4</strong><span>Projects</span></li>-->
+<!--                <li><strong>6</strong><span>Certifications</span></li>-->
+<!--            </ul>-->
         </div>
-        <div class="hero-image">
-            <img
-                    src="{% static 'images/profile.jpg' %}"
-                    alt="Arpitha Profile Photo"
-                    class="profile-photo"
-            >
+        <div class="hero-image reveal">
+            <div class="photo-ring">
+                <img src="{% static 'images/profile.jpg' %}" alt="Arpitha Profile Photo" class="profile-photo">
+            </div>
+        </div>
+    </div>
+    <a href="#projects" class="scroll-hint" aria-label="Scroll to projects"><i class="fa-solid fa-chevron-down"></i></a>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="section projects-section" id="projects">
+    <div class="container">
+        <h2 class="section-title reveal"><span>01</span> My Projects</h2>
+        <div class="swiper my-projects-swiper reveal">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="project-card">
+                        <div>
+                            <i class="fa-solid fa-bolt project-icon"></i>
+                            <h3>Implementation of Electricity Billing System in C</h3>
+                            <span class="project-date">Oct 2019 – Jan 2020</span>
+                            <p>The main objective to do reduce the cost of collection procedure. It is about the
+                                implementation of Electricity Billing system using basic C programming language.</p>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Arpitha4/Electricity_Bill" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="project-card">
+                        <div>
+                            <i class="fa-brands fa-react project-icon"></i>
+                            <h3>Yesplus club website</h3>
+                            <span class="project-date">May 2020 – Oct 2020</span>
+                            <p>A real-time web application built with React for delivering interactive and seamless user
+                                experience.</p>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Arpitha4/Yes_Plus_webapp" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+                            <a href="https://bityesplus.web.app/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="project-card">
+                        <div>
+                            <i class="fa-solid fa-list-check project-icon"></i>
+                            <h3>Smart Todo</h3>
+                            <span class="project-date">Jun 2025 – Jul 2025</span>
+                            <p>Smart Todo is an intelligent AI-powered task management platform that automatically
+                                creates and prioritizes tasks using contextual data such as messages, notes, or emails,
+                                built using Django.</p>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Arpitha4/django_food_delivery" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="project-card">
+                        <div>
+                            <i class="fa-solid fa-utensils project-icon"></i>
+                            <h3>Foodie Express</h3>
+                            <span class="project-date">Sep 2025 – Oct 2025</span>
+                            <p>Foodie Express is a Django-based food delivery application that allows customers to
+                                browse food items, place orders, and communicate with delivery Partner. Admins and
+                                delivery users can manage the system efficiently through role-based access.</p>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/yourusername/project3" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
     </div>
 </section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section about-container" id="about">
+    <div class="container">
+        <h2 class="section-title reveal"><span>02</span> About</h2>
+        <div class="about-details glass reveal">
+            <p class="about-line">
+                <strong>Backend Developer</strong> | Python | APIs | Flask | FastAPI | SQL | NoSQL | Azure | Data
+                Visualization
+            </p>
+            <p class="about-line">
+                Backend developer with <strong>2+ years of experience</strong> building and maintaining Python-based
+                backend services and REST APIs across Linux and Windows environments. I Specialise in
+                <strong>Flask and FastAPI</strong>, developing scalable, secure, and clean backend architectures that
+                support business-critical applications.
+            </p>
+            <p class="about-line">
+                I have strong hands-on experience working with <strong>SQL and NoSQL databases</strong>, including query
+                optimisation, database performance tuning, schema improvements, and bug fixing related to backend data
+                flows. Also includes deploying and managing applications on <strong>Azure</strong> and using
+                <strong>Docker</strong>.
+            </p>
+            <p class="about-line">
+                In addition to my core backend experience, I have built several personal projects using
+                <strong>Django</strong>. These projects strengthened my understanding of Django’s structure and best
+                practices, even though it’s not part of my professional experience.
+            </p>
+            <p class="about-line">
+                I am a proactive learner with a strong interest in writing maintainable code, solving complex technical
+                problems, and contributing to high-quality backend systems.
+            </p>
+        </div>
+
+        <div class="about-grid">
+            <article class="card reveal" tabindex="0">
+                <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+                <p>B.E. in Computer Science</p>
+                <ul>
+                    <li>Global Academy Of Technology, Bangalore (2018 - 2022).</li>
+                </ul>
+                <p>Department of Pre-University Education</p>
+                <ul>
+                    <li>Jnana Bharathi PU College, Kunigal (2016 - 2018).</li>
+                </ul>
+                <p>Karnataka Secondary Education Examination Board</p>
+                <ul>
+                    <li>Jnana Bharathi High School, Kunigal (2015 - 2016).</li>
+                </ul>
+            </article>
+            <article class="card reveal" tabindex="0">
+                <h3><i class="fa-solid fa-code"></i> Skills</h3>
+                <p>Tech stack &amp; tools</p>
+                <ul>
+                    <li>Programming Language : Python.</li>
+                    <li>Frameworks : Fast API, Flask API, Django.</li>
+                    <li>Database knowledge : MySQL, PostgreSQL, Cassandra, Kairos DB.</li>
+                    <li>Version Control &amp; Collaboration : Git, GitHub, GitLab.</li>
+                    <li>Operating System : Windows, Linux.</li>
+                    <li>Services : Azure DevOps, Azure Virtual Machines.</li>
+                    <li>Business analytics tool : Basics of Power BI Data Visualization.</li>
+                </ul>
+            </article>
+            <article class="card reveal" tabindex="0">
+                <h3><i class="fa-solid fa-briefcase"></i> Experience</h3>
+                <p>Software Engineer</p>
+                <ul>
+                    <li>Knowledge Lens: A Rockwell Automation Company (Aug 2022 - Oct 2024).</li>
+                </ul>
+                <p>Intern</p>
+                <ul>
+                    <li>Knowledge Lens (Mar 2022 - Jun 2022).</li>
+                </ul>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section contact-page" id="contact">
+    <div class="container">
+        <h2 class="section-title reveal"><span>03</span> Connect With Me</h2>
+        <p class="contact-subtext reveal">Feel free to reach out through my social profiles</p>
+        <div class="social-links reveal">
+            <a href="https://www.linkedin.com/in/arpitha-n-g/" target="_blank" rel="noopener" class="social-icon linkedin" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/Arpitha4" target="_blank" rel="noopener" class="social-icon github" aria-label="GitHub">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.instagram.com/bhat.n.g" target="_blank" rel="noopener" class="social-icon instagram" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="mailto:arpithabhatng01@gmail.com" class="social-icon email" aria-label="Email">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ============ RESUME ============ -->
+<section class="section resume-page" id="resume">
+    <div class="container">
+        <h2 class="section-title reveal"><span>04</span> Resume</h2>
+
+        <div class="resume-section glass reveal">
+            <p>Software Engineer with over two years of experience in designing and developing efficient software
+                solutions. Skilled in problem-solving, system optimization, and delivering high-quality applications
+                that align with business objectives. Adept at collaborating in team environments, adapting to new
+                technologies, and continuously enhancing technical expertise.</p>
+        </div>
+
+        <div class="resume-grid">
+            <div class="resume-section glass reveal">
+                <div>
+                    <h3><i class="fa-solid fa-trophy"></i> Achievements</h3>
+                    <ul>
+                        <li>Recognized as <strong>'Flexible Employee'</strong> in April 2024 for outstanding adaptability
+                            and responsiveness to changing work demands and project requirements.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="resume-section glass reveal">
+                <div>
+                    <h3><i class="fa-solid fa-certificate"></i> Certifications</h3>
+                    <ul>
+                        <li>Introduction to HTML5 - (May 2020).</li>
+                        <li>Programming for Everybody (Getting Started with Python) - (May 2020).</li>
+                        <li>HTML, CSS, and Javascript for Web Developers - (Aug 2020).</li>
+                        <li>DIGITAL SKILLS: WEB ANALYTICS - (Oct 2020).</li>
+                        <li>Microsoft SQL for Beginners - (Jun 2024)</li>
+                        <li>Python Django For Beginners - (Sept 2025).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="resume-actions reveal">
+            <a class="download-btn" href="{% static 'resume/resume.pdf' %}" download>
+                <i class="fa-solid fa-download"></i> Download PDF Resume
+            </a>
+            <a class="download-btn alt" href="{% static 'resume/resume.pdf' %}" target="_blank" rel="noopener">
+                <i class="fa-solid fa-eye"></i> View Resume
+            </a>
+        </div>
+    </div>
+</section>
+
 {% endblock %}

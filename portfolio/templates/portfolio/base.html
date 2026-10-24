@@ -1,42 +1,129 @@
 {% load static %}
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="midnight">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>{% block title %}My Portfolio{% endblock %}</title>
-    {% block extra_head %}{% endblock %}
-    <link rel="stylesheet" href="{% static 'portfolio/css/styles.css' %}">
+    <meta name="description" content="Arpitha N G - Backend Developer | Python, Flask, FastAPI, SQL, Azure">
+    <title>{% block title %}Arpitha N G - Portfolio{% endblock %}</title>
+
+    <!-- Restore saved theme before first paint (prevents colour flash) -->
+    <script>
+        document.documentElement.classList.add('js');
+        try {
+            var saved = JSON.parse(localStorage.getItem('pf-theme'));
+            if (saved && saved.name) {
+                document.documentElement.setAttribute('data-theme', saved.name);
+                if (saved.name === 'custom' && saved.vars) {
+                    document.documentElement.setAttribute('data-tone', saved.tone || 'dark');
+                    for (var k in saved.vars) {
+                        document.documentElement.style.setProperty(k, saved.vars[k]);
+                    }
+                }
+            }
+        } catch (e) {}
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'portfolio/css/styles.css' %}">
+    {% block extra_head %}{% endblock %}
 </head>
 <body>
-<header class="site-header">
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+<header class="site-header" id="siteHeader">
     <div class="container nav">
-        <a class="brand" href="{% url 'portfolio:index' %}">Arpitha N G</a>
-        <button class="nav-toggle" aria-label="Toggle navigation">
-            <i class="fa fa-bars"></i>
+        <a class="brand" href="#home">Arpitha N G</a>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
         </button>
-        <nav class="primary-nav">
-            <a href="{% url 'portfolio:index' %}">Home</a>
-            <a href="{% url 'portfolio:projects' %}">Projects</a>
-            <a href="{% url 'portfolio:about' %}">About</a>
-            <a href="{% url 'portfolio:contact' %}">Contact</a>
-            <a href="{% url 'portfolio:resume' %}">Resume</a>
+
+        <nav class="primary-nav" id="primaryNav" aria-label="Main">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#contact" class="nav-link">Contact</a>
+            <a href="#resume" class="nav-link">Resume</a>
+
+            <!-- Theme switcher (after Resume) -->
+            <div class="theme-menu" id="themeMenu">
+                <button type="button" class="theme-toggle" id="themeToggle" aria-expanded="false"
+                        aria-controls="themePanel" title="Change colours">
+                    <i class="fa-solid fa-palette"></i>
+                    <span>Theme</span>
+                </button>
+
+                <div class="theme-panel" id="themePanel" role="dialog" aria-label="Colour theme">
+                    <p class="panel-title">Colour themes</p>
+                    <div class="swatches">
+                        <button type="button" class="swatch" data-preset="midnight" aria-pressed="false"
+                                style="--s1:#070b18;--s2:#0b1020;--s3:#7c5cff">
+                            <span class="chip"></span><span class="label">Midnight</span>
+                        </button>
+                        <button type="button" class="swatch" data-preset="light" aria-pressed="false"
+                                style="--s1:#ffffff;--s2:#f4f6fb;--s3:#4f46e5">
+                            <span class="chip"></span><span class="label">Light</span>
+                        </button>
+                        <button type="button" class="swatch" data-preset="ocean" aria-pressed="false"
+                                style="--s1:#031219;--s2:#06202b;--s3:#22d3ee">
+                            <span class="chip"></span><span class="label">Ocean</span>
+                        </button>
+                        <button type="button" class="swatch" data-preset="sunset" aria-pressed="false"
+                                style="--s1:#14081a;--s2:#1f1020;--s3:#fb7185">
+                            <span class="chip"></span><span class="label">Sunset</span>
+                        </button>
+                        <button type="button" class="swatch" data-preset="forest" aria-pressed="false"
+                                style="--s1:#07130e;--s2:#0d1f17;--s3:#34d399">
+                            <span class="chip"></span><span class="label">Forest</span>
+                        </button>
+                        <button type="button" class="swatch" data-preset="classic" aria-pressed="false"
+                                style="--s1:#020617;--s2:#b4bcc8;--s3:#0b66d2">
+                            <span class="chip"></span><span class="label">Classic</span>
+                        </button>
+                    </div>
+
+                    <p class="panel-title">Custom colours</p>
+                    <div class="pickers">
+                        <label>Header
+                            <input type="color" id="pickHeader" value="#070b18">
+                        </label>
+                        <label>Body
+                            <input type="color" id="pickBody" value="#0b1020">
+                        </label>
+                        <label>Accent
+                            <input type="color" id="pickAccent" value="#7c5cff">
+                        </label>
+                    </div>
+                    <button type="button" class="reset-theme" id="resetTheme">
+                        <i class="fa-solid fa-rotate-left"></i> Reset to default
+                    </button>
+                </div>
+            </div>
         </nav>
     </div>
 </header>
-{% block content %}{% endblock %}
+
+<main>
+    {% block content %}{% endblock %}
+</main>
+
 <footer class="site-footer">
-    <div class="footer-content">
-        <p>Copyright &copy; 2025 Arpitha N G. All rights reserved.</p>
-        <p class="contact-link"><a href="{% url 'portfolio:contact' %}">Contact</a></p>
+    <div class="container footer-content">
+        <p>Copyright &copy; {% now "Y" %} Arpitha N G. All rights reserved.</p>
+        <p><a href="#contact">Contact</a></p>
     </div>
 </footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
 {% block extra_js %}
 <script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
-<script src="{% static 'portfolio/js/base.js' %}"></script>
-<script src="{% static 'portfolio/js/projects_slider.js' %}"></script>
-<script src="{% static 'portfolio/js/particles.js' %}"></script>
+<script src="{% static 'portfolio/js/main.js' %}"></script>
 {% endblock %}
 </body>
 </html>
